@@ -6,8 +6,8 @@ import Logo from './../../assets/images/argentBankLogo.webp';
 const Navbar = () => {
     return (
         <nav className='main-nav'>
-            <NavLink to='/' className='nav-logo'>
-                <img src={Logo} alt="Logo de Argent bank écrit en capitale et de couleur verte" className="logo" />
+            <NavLink to='/' className='main-nav-logo'>
+                <img src={Logo} alt="Logo de Argent bank écrit en capitale et de couleur verte" className="main-nav-logo-image" />
             </NavLink>
 
             <ul>
