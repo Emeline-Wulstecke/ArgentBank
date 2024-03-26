@@ -1,19 +1,19 @@
 import './navbar.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import argenBankLogo from '../../assets/argentBankLogo.webp';
+import Logo from './../../assets/images/argentBankLogo.webp';
 
 const Navbar = () => {
     return (
-        <nav className='nav'>
+        <nav className='main-nav'>
             <NavLink to='/' className='nav-logo'>
-                <img src={argenBankLogo} alt="Logo de Argent bank écrit en capitale et de couleur verte" className="logo" />
+                <img src={Logo} alt="Logo de Argent bank écrit en capitale et de couleur verte" className="logo" />
             </NavLink>
 
             <ul>
-                <NavLink to='login' className='nav-item'>
+                <NavLink to='login'>
                     <li>
-                        <i className='fa fa-user-circle'></i>
+                        <i className='fa fa-user-circle main-nav-item'></i>
                         Sign In
                     </li>
                 </NavLink>
