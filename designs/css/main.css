@@ -56,7 +56,7 @@ body {
   margin-right: 0.5rem;
 }
 
-.main-nav-item:hover {
+.main-nav-item :hover {
   text-decoration: underline;
 }
 
