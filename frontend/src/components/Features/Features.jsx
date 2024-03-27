@@ -9,7 +9,7 @@ const Features = () => {
             <h2 className='sr-only'>Features</h2>
             {featuresData.map((feature, index) => (
                 <figure className="feature-item" key={index}>
-                    <img src={feature.icon} alt="Feature Icon" className="feature-icon" />
+                    <img src={feature.icon}  alt={feature.alt} className="feature-icon" />
                     <h3 className="feature-item-title">{feature.title}</h3>
                     <p>{feature.description}</p>
                 </figure>
