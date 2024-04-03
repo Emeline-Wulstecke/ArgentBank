@@ -6,6 +6,10 @@ import accountData from '../../data/accountData.json';
 const Profile = () => {
     return (
         <main className='main bg-dark'>
+            <section className='header'>
+            <h1 className='title-header'>Welcome back<br />Tony Jarvis!</h1>
+            <button className='edit-button'>Edit Name</button>
+            </section>
             <h2 className='sr-only'>Accounts</h2>
             {accountData.map((account, index) => (
                 <Account
