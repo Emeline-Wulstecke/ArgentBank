@@ -7,12 +7,12 @@
   
   .main-nav ul {
     font-weight: bold;
-    color: black;
   }
   
   .main-nav-item {
     text-decoration: none;
     margin-right: 0.3rem;
+    color: black;
   }
   
   .main-nav-item:hover {
