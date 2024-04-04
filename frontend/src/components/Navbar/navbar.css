@@ -8,6 +8,12 @@
   .main-nav ul {
     font-weight: bold;
   }
+
+  .main-nav li {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
   
   .main-nav-item {
     text-decoration: none;
@@ -19,7 +25,7 @@
     text-decoration: underline;
     color: #42b983
   }
-  
+
   .main-nav-logo {
     display: flex;
     align-items: center;

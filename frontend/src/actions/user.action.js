@@ -39,6 +39,7 @@ export const loginUser = (email, password, rememberMe) => {
                     sessionStorage.setItem("token", token);
                 }
                 dispatch(userLoginSuccess());
+                dispatch(fetchUser());
                 return response; // Return the response when login is successful
             } else {
                 localStorage.removeItem("token");
@@ -80,6 +81,7 @@ export const fetchUser = () => {
             }
         } catch (error) {
             console.error(error);
+            console.log (error)
         }
     };
 };

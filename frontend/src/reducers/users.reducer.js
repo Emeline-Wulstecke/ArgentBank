@@ -2,7 +2,7 @@ import { USER_LOGIN_SUCCESS, USER_LOGIN_FAIL, LOGOUT_USER, USER_PROFILE} from '.
 
 const initialState = {
     loginError: null,
-    userProfile: '',
+    userProfile: {},
 };
 
 const usersReducer = (state = initialState, action) => {
