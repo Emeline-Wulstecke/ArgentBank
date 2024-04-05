@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-button.edit-button {
+.edit-button, .save-button, .cancel-button {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
@@ -24,10 +24,41 @@ button.edit-button {
   cursor: pointer;
 }
 
-.edit-button:hover{
-  opacity:0.95;
+.edit-button:hover, .save-button:hover, .cancel-button:hover {
+  opacity: 0.95;
 }
 
 .title-header {
   font-size: 2em;
 }
+
+ .title-edit, .label-edit {
+  color: black;
+}
+
+.title-header {
+  font-size: 2em;
+}
+
+.title-edit {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.edit {
+  padding: 0 20px;
+  background-color: white;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.save-button, .cancel-button {
+  width: 100%;
+  border-radius: 3px;
+}
+

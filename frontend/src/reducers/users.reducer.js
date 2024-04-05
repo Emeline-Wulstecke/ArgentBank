@@ -1,4 +1,4 @@
-import { USER_LOGIN_SUCCESS, USER_LOGIN_FAIL, LOGOUT_USER, USER_PROFILE} from '../actions/user.action';
+import { USER_LOGIN_SUCCESS, USER_LOGIN_FAIL, LOGOUT_USER, USER_PROFILE, EDIT_USER} from '../actions/user.action';
 
 const initialState = {
     loginError: null,
@@ -28,6 +28,15 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 userProfile: action.payload,
             };
+
+            case EDIT_USER:
+                return {
+                    ...state,
+                    userProfile: {
+                        ...state.userProfile,
+                        userName: action.payload,
+                    },
+                };
         default:
             return state;
     }
