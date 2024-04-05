@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './error.css';
-import exit from './../../assets/images/exit.webp';
+import exit from './../../asset/exit.webp';
 
 const Error = () => {
     return (

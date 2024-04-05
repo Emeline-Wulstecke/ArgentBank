@@ -17,6 +17,11 @@ main {
   flex: 1;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 .body {
   margin: 0;
   display: flex;

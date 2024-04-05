@@ -19,20 +19,20 @@ const Profile = () => {
     const [initialUserName, setInitialUserName] = useState('');
 
     useEffect(() => {
-        setInitialUserName(userProfile.userName || ''); // Stocker le nom d'utilisateur initial
+        setInitialUserName(userProfile.userName || ''); // Stock le nom d'utilisateur initial
     }, [userProfile]);
 
     const toggleEdit = () => {
         setEditUserName(!editUserName);
         if (!editUserName) {
-            setNewUserName(initialUserName); // Réinitialiser le champ de saisie avec le nom d'utilisateur initial
+            setNewUserName(initialUserName); // Réinitialise le champ de saisie avec le nom d'utilisateur initial
         }
     };
 
     const handleSave = () => {
         dispatch(editUser(newUserName));
         alert('Your username has been changed');
-        setInitialUserName(newUserName); // Mettre à jour le nom d'utilisateur initial avec le nouveau nom d'utilisateur
+        setInitialUserName(newUserName); // Met à jour le nom d'utilisateur initial avec le nouveau nom d'utilisateur
         toggleEdit();
     };
 

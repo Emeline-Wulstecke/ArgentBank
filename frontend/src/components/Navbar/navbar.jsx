@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser, fetchUser } from '../../actions/user.action';
 import { useDispatch, useSelector } from 'react-redux';
-import Logo from './../../assets/images/argentBankLogo.webp';
+import Logo from './../../asset/argentBankLogo.webp';
 
 const Navbar = () => {
     const dispatch = useDispatch();
@@ -24,8 +24,8 @@ const Navbar = () => {
     const tokenLocalStorage = localStorage.getItem('token');
     const tokenSessionStorage = sessionStorage.getItem('token');
     const token = tokenLocalStorage || tokenSessionStorage;
-    const storedUsername = localStorage.getItem('username'); // Récupérer le nom d'utilisateur stocké
-    const usernameToDisplay = storedUsername || (userProfile && userProfile.userName); // Utiliser le nom d'utilisateur stocké s'il existe, sinon utiliser celui du profil
+    const storedUsername = localStorage.getItem('username'); // Récupe le nom d'utilisateur stocké
+    const usernameToDisplay = storedUsername || (userProfile && userProfile.userName); // Utilise le nom d'utilisateur stocké s'il existe, sinon utiliser celui du profil
 
     if (token) {
         return (
@@ -36,7 +36,7 @@ const Navbar = () => {
                 </NavLink>
                 <ul className='main-nav-item'>
                     <li>
-                        {usernameToDisplay && ( // Afficher le nom d'utilisateur si disponible
+                        {usernameToDisplay && ( // Affiche le nom d'utilisateur si disponible
                             <NavLink to='/profile' className='main-nav-item'>
                                 <i className='fa fa-user-circle main-nav-item'></i>
                                 {usernameToDisplay}
