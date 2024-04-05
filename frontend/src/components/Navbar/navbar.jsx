@@ -24,6 +24,8 @@ const Navbar = () => {
     const tokenLocalStorage = localStorage.getItem('token');
     const tokenSessionStorage = sessionStorage.getItem('token');
     const token = tokenLocalStorage || tokenSessionStorage;
+    const storedUsername = localStorage.getItem('username'); // Récupérer le nom d'utilisateur stocké
+    const usernameToDisplay = storedUsername || (userProfile && userProfile.userName); // Utiliser le nom d'utilisateur stocké s'il existe, sinon utiliser celui du profil
 
     if (token) {
         return (
@@ -34,10 +36,10 @@ const Navbar = () => {
                 </NavLink>
                 <ul className='main-nav-item'>
                     <li>
-                        {userProfile && userProfile.userName && (
-                            <NavLink to='/user-account' className='main-nav-item'>
+                        {usernameToDisplay && ( // Afficher le nom d'utilisateur si disponible
+                            <NavLink to='/profile' className='main-nav-item'>
                                 <i className='fa fa-user-circle main-nav-item'></i>
-                                {userProfile.userName}
+                                {usernameToDisplay}
                             </NavLink>
                         )}
                         <NavLink to='/' className='main-nav-item' onClick={handleSignOut}>

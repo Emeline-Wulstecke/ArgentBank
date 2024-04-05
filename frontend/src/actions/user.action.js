@@ -95,7 +95,7 @@ export const fetchUser = () => {
             }
         } catch (error) {
             console.error(error);
-            console.log (error)
+            console.log(error)
         }
     };
 };
@@ -130,6 +130,8 @@ export const editUser = (username) => {
                     type: EDIT_USER,
                     payload: username,
                 });
+
+                localStorage.setItem("username", username);
             } else {
                 throw new Error("Failed to edit username");
             }

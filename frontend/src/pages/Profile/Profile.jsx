@@ -31,9 +31,8 @@ const Profile = () => {
 
     const handleSave = () => {
         dispatch(editUser(newUserName));
-        console.log (newUserName);
         alert('Your username has been changed');
-        setInitialUserName(newUserName); // Met à jour le nom d'utilisateur initial avec le nouveau nom d'utilisateur
+        setInitialUserName(newUserName); // Mettre à jour le nom d'utilisateur initial avec le nouveau nom d'utilisateur
         toggleEdit();
     };
 
