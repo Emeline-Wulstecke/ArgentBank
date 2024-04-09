@@ -29,21 +29,21 @@ const Navbar = () => {
 
     if (token) {
         return (
-            <nav className='main-nav'>
-                <NavLink to='/' className='main-nav-logo'>
-                    <img src={Logo} alt='Argent Bank Logo' className='main-nav-logo-image' />
+            <nav id='nav'>
+                <NavLink to='/'>
+                    <img src={Logo} alt='Argent Bank ecrit en vert' />
                     <h1 className='sr-only'>Argent Bank</h1>
                 </NavLink>
-                <ul className='main-nav-item'>
+                <ul>
                     <li>
                         {usernameToDisplay && ( // Affiche le nom d'utilisateur si disponible
-                            <NavLink to='/profile' className='main-nav-item'>
+                            <NavLink to='/profile'>
                                 <i className='fa fa-user-circle main-nav-item'></i>
                                 {usernameToDisplay}
                             </NavLink>
                         )}
-                        <NavLink to='/' className='main-nav-item' onClick={handleSignOut}>
-                            <i className='fa fa-sign-out main-nav-item'></i>
+                        <NavLink to='/' onClick={handleSignOut}>
+                            <i className='fa fa-sign-out'></i>
                             Sign Out
                         </NavLink>
                     </li>
@@ -52,15 +52,15 @@ const Navbar = () => {
         );
     } else {
         return (
-            <nav className='main-nav'>
-                <NavLink to='/' className='main-nav-logo'>
-                    <img src={Logo} alt='Argent Bank Logo' className='main-nav-logo-image' />
+            <nav id='nav'>
+                <NavLink to='/'>
+                    <img src={Logo} alt='Argent Bank Logo' />
                     <h1 className='sr-only'>Argent Bank</h1>
                 </NavLink>
                 <ul>
                     <li>
-                        <NavLink to='/login' className='main-nav-item'>
-                            <i className='fa fa-user-circle main-nav-item'></i>
+                        <NavLink to='/login'>
+                            <i className='fa fa-user-circle'></i>
                             Sign In
                         </NavLink>
                     </li>

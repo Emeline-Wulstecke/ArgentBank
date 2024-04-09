@@ -1,64 +1,72 @@
-.main-error {
+#error {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 139px;
+    padding-bottom: 100px;
     gap: 139px;
 }
 
-.title-error {
-    text-align: center;
+#error section {
+    width: 100%;
+}
+
+#error h2 {
     margin: 30px;
     font-size: 288px;
-    font-weight: 700;
     color: #42b983;
 }
 
-.text-error {
+#error p {
+    padding: 20px;
     font-size: 36px;
-    color: #42b983;
+    color: #FF6060;
 }
 
-img {
+#error img {
     width: 50px;
 }
 
-.link-error {
+#error figcaption {
+    font-size: 18px;
+    color: black;
+}
+
+#error figure {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     gap: 10px;
     color: black;
     text-decoration: underline;
 }
 
+
 /************** Responsive tablette *************/
 
 @media (max-width: 1200px) {
-    .text-error {
+    #error p {
         text-align: center;
     }
+
+    #error h2 {
+        font-size: 144px;
+    }
+
 }
 
 /************** Responsive mobile*************/
 
-@media (max-width: 768px) {
-    .main-error {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 375px;
-        gap: 113px;
+@media (max-width: 767px) {
+    #error h2 {
+        font-size: 96px;
     }
 
-    .text-error {
-        font-size: 18px;
-        color: #FF6060;
-        text-align: center;
+    #error p {
+        font-size: 25px;
     }
 
-    .link-error {
-        color: black;
-        text-decoration: underline;
+    #error figcaption {
+        font-size: 16px;
     }
 }

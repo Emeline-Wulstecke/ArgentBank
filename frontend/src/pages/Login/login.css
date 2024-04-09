@@ -1,50 +1,45 @@
-
-.sign-in-content {
+#login {
   box-sizing: border-box;
-  background-color: white;
-  width: 300px;
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
+  width: 300px;
+  background-color: white;
 }
 
-.input-remember {
-  display: flex;
+#login h2 {
+  font-size: 1.5em;
 }
 
-.input-remember label {
-  margin-left: 0.25rem;
-}
-
-.input-wrapper {
-  display: flex;
-  flex-direction: column;
+#login fieldset {
   text-align: left;
-  margin-bottom: 1rem;
+  border: none;
+  padding: 0;
+  padding-bottom: 15px;
 }
 
-.input-wrapper label {
-  font-weight: bold;
-}
-
-.input-wrapper input {
+#login input {
   padding: 5px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
-.sign-in-button {
+#login button {
   display: block;
   width: 100%;
   padding: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  border-color: #00bc77;
-  background-color: #00bc77;
-  color: #fff;
+  font-size: 1rem;
+  text-decoration: underline;
 }
 
-.error-message {
+#login p {
   color: red;
   font-weight: italic;
+}
+
+.remember label {
+  margin-left: 0.25rem;
+}
+
+label.sign {
+  font-weight: bold;
 }

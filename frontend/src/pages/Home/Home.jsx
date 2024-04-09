@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <main>
             <Banner />
-            <section className='features'>
+            <section className='icon'>
                 <h2 className='sr-only'>Features</h2>
                 {featuresData.map((feature, index) => (
                     <Features

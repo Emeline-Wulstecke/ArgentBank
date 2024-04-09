@@ -1,10 +1,12 @@
-.features {
-  display: flex;
-  flex-direction: row;
+@media (max-width: 920px) {
+  .icon {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
-@media (max-width: 920px) {
-  .features {
+@media (max-width: 767px) {
+ .icon {
     flex-direction: column;
   }
 }

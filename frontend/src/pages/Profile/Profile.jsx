@@ -42,52 +42,53 @@ const Profile = () => {
 
     return (
         <main className='main bg-dark'>
-            <section className='header'>
-                {editUserName ? (
-                    <section className='edit'>
-                        <h2 className='title-edit'>Edit user info</h2>
-                        <div>
-                            <label htmlFor="newUserName" className='label-edit'>User Name: </label>
-                            <input
-                                type="text"
-                                id="newUserName"
-                                placeholder="Enter New Username"
-                                value={newUserName}
-                                onChange={(e) => setNewUserName(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="firstName" className='label-edit'>First Name: </label>
-                            <input
-                                type="text"
-                                id="firstName"
-                                value={userProfile.firstName}
-                                disabled
-                                className='text_input'
-                            />
-                        </div>
-                        <div >
-                            <label htmlFor="lastName" className='label-edit'>Last Name: </label>
-                            <input
-                                type="text"
-                                id="lastName"
-                                value={userProfile.lastName}
-                                disabled
-                                className='text_input'
-                            />
-                        </div>
-                        <div className='edit-buttons'>
-                            <button onClick={handleSave} className='save-button'>Save</button>
-                            <button onClick={handleCancel} className='cancel-button'>Cancel</button>
-                        </div>
-                    </section>
-                ) : (
-                    <section>
-                        <h1 className='title-header'>Welcome back<br />{userProfile.firstName} {userProfile.lastName} !</h1>
-                        <button className='edit-button' onClick={toggleEdit}>Edit Name</button>
-                    </section>
-                )}
-            </section>
+
+            {!editUserName ? (
+                <section className='header'>
+                    <h2>Welcome back<br />{userProfile.firstName} {userProfile.lastName} !</h2>
+                    <button onClick={toggleEdit}>Edit Name</button>
+                </section>
+
+            ) : (
+                <section className='edit'>
+                    <h2>Edit user info</h2>
+                    <fieldset>
+                        <label htmlFor="newUserName" >User Name: </label>
+                        <input
+                            type="text"
+                            id="newUserName"
+                            placeholder="Enter New Username"
+                            value={newUserName}
+                            onChange={(e) => setNewUserName(e.target.value)}
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="firstName" >First Name: </label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            value={userProfile.firstName}
+                            disabled
+                            className='text_input'
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="lastName" >Last Name: </label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            value={userProfile.lastName}
+                            disabled
+                            className='text_input'
+                        />
+                    </fieldset>
+                    <form >
+                        <button type="submit" on onClick={handleSave} className='save-button'>Save</button>
+                        <button type="button" onClick={handleCancel} className='cancel-button'>Cancel</button>
+                    </form>
+                </section>
+            )}
+
             <h2 className='sr-only'>Accounts</h2>
             {accountData.map((account, index) => (
                 <Account

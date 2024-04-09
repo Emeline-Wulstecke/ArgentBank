@@ -44,24 +44,24 @@ const Login = () => {
 
   return (
     <main className="bg-dark">
-      <section className="sign-in-content">
+      <section id='login'>
         <i className="fa fa-user-circle sign-in-icon"></i>
-        <h1>Sign In</h1>
-        {loginError && <p className="error-message">{loginError}</p>}
+        <h2>Sign In</h2>
+        {loginError && <p>{loginError}</p>}
         <form onSubmit={handleSignIn}>
-          <div className="input-wrapper">
-            <label htmlFor="username">Username</label>
+          <fieldset>
+            <label htmlFor="username" className='sign'>Username</label>
             <input type="text" id="username"  autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
-          <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="password" className='sign'>Password</label>
             <input type="password" id="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          </div>
-          <div className="input-remember">
+          </fieldset>
+          <fieldset className="remember">
             <input type="checkbox" id="remember-me" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
             <label htmlFor="remember-me">Remember me</label>
-          </div>
-          <button type="submit" className="sign-in-button" disabled={isLoading}>{isLoading ? 'Signing In...' : 'Sign In'}</button>
+          </fieldset>
+          <button type="submit" disabled={isLoading}>{isLoading ? 'Signing In...' : 'Sign In'}</button>
         </form>
       </section>
     </main>

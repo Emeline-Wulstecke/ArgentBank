@@ -5,13 +5,15 @@ import exit from './../../asset/exit.webp';
 
 const Error = () => {
     return (
-        <main className='main-error'>
-            <section className="error">
-                <h1 className='title-error'>404</h1>
-                <p className="text-error">Page not found</p>
-                <NavLink to="/" className="link-error">
-                    <img src={exit} alt="exit" />
-                    <p>Back to home Page</p>
+        <main id='error'>
+            <section>
+                <h2>404</h2>
+                <p>Page not found</p>
+                <NavLink to="/">
+                    <figure>
+                        <img src={exit} alt="exit" />
+                        <figcaption >Back to home Page</figcaption>
+                    </figure>
                 </NavLink>
             </section>
         </main>
