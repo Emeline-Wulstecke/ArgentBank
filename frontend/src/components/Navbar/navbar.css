@@ -17,9 +17,14 @@
   color: #42b983
 }
 
+#nav li {
+  display: flex;
+  gap:10px;
+}
+
 #nav a {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   text-decoration: none;
   list-style: none;
   align-items: center;

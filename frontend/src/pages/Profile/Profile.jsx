@@ -83,7 +83,7 @@ const Profile = () => {
                         />
                     </fieldset>
                     <form >
-                        <button type="submit" on onClick={handleSave} className='save-button'>Save</button>
+                        <button type="submit" onClick={handleSave} className='save-button'>Save</button>
                         <button type="button" onClick={handleCancel} className='cancel-button'>Cancel</button>
                     </form>
                 </section>

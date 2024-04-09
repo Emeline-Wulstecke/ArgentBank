@@ -5,11 +5,11 @@ import React from 'react';
   const Account = ({ type, number, balance, balanceDescription}) => {
     return (
         <section id="account">
-        <label>
+        <header>
             <h3>{type} - {number}</h3>
             <p className='amount'>{balance}</p>
             <p>{balanceDescription}</p>
-        </label>
+        </header>
             <button>View transactions</button>
     </section>
     );
