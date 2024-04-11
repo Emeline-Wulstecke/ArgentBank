@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../actions/user.action';
+import { logIn } from '../../redux/actions/auth.actions';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); 
-  
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false);
 
-  const loginError = useSelector(state => state.users.loginError);
 
-  const handleSignIn = async (e) => {
+  const loginError = useSelector(state => state.auth.error);
+
+  const handlelogIn = async (e) => {
     e.preventDefault();
 
     if (!email || !password) {
@@ -26,19 +27,11 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await dispatch(loginUser(email, password, rememberMe));
-      
-      // Vérifiez si la réponse contient un token valide
-      if (!response || !response.data || !response.data.body || !response.data.body.token) {
-        throw new Error('Invalid token');
-      }
+      await dispatch(logIn({ email, password, rememberMe }));
 
-      // La connexion a réussi si nous arrivons ici
-      // Redirigez vers la page /profile
       navigate('/profile');
     } catch (error) {
       setIsLoading(false);
-
     }
   };
 
@@ -48,10 +41,10 @@ const Login = () => {
         <i className="fa fa-user-circle sign-in-icon"></i>
         <h2>Sign In</h2>
         {loginError && <p>{loginError}</p>}
-        <form onSubmit={handleSignIn}>
+        <form onSubmit={handlelogIn}>
           <fieldset>
             <label htmlFor="username" className='sign'>Username</label>
-            <input type="text" id="username"  autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" id="username" autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} />
           </fieldset>
           <fieldset>
             <label htmlFor="password" className='sign'>Password</label>
@@ -61,7 +54,7 @@ const Login = () => {
             <input type="checkbox" id="remember-me" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />
             <label htmlFor="remember-me">Remember me</label>
           </fieldset>
-          <button type="submit" disabled={isLoading}>{isLoading ? 'Signing In...' : 'Sign In'}</button>
+          <button type="submit" disabled={isLoading}>{isLoading ? 'logIng In...' : 'Sign In'}</button>
         </form>
       </section>
     </main>

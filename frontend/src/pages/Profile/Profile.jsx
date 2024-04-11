@@ -3,49 +3,58 @@ import './profile.css';
 import Account from '../../components/Account/Account';
 import accountData from '../../data/accountData.json';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser, editUser } from '../../actions/user.action';
+import { getProfile, editUsername } from '../../redux/actions/auth.actions'; // Mettre à jour l'import de l'action
 
 const Profile = () => {
     const dispatch = useDispatch();
-    const userProfile = useSelector(state => state.users.userProfile);
+    const userProfile = useSelector(state => state.auth.user);
 
     useEffect(() => {
-        dispatch(fetchUser());
+        dispatch(getProfile());
     }, [dispatch]);
 
     //////////! Edit username
-    const [editUserName, setEditUserName] = useState(false);
+    const [updateUsername, setupdateUsername] = useState(false);
     const [newUserName, setNewUserName] = useState('');
     const [initialUserName, setInitialUserName] = useState('');
 
     useEffect(() => {
-        setInitialUserName(userProfile.userName || ''); // Stock le nom d'utilisateur initial
+        if (userProfile) {
+            setNewUserName(userProfile.userName || '');
+            setInitialUserName(userProfile.userName || '');
+        } else {
+            setNewUserName('');
+            setInitialUserName('');
+        }
     }, [userProfile]);
-
+    
     const toggleEdit = () => {
-        setEditUserName(!editUserName);
-        if (!editUserName) {
-            setNewUserName(initialUserName); // Réinitialise le champ de saisie avec le nom d'utilisateur initial
+        setupdateUsername(!updateUsername);
+        if (!updateUsername) {
+            // Mettre à jour newUserName avec la valeur actuelle de userProfile.userName
+            setNewUserName(userProfile.userName || '');
         }
     };
 
     const handleSave = () => {
-        dispatch(editUser(newUserName));
+        dispatch(editUsername(newUserName)); // Correction de l'action
         alert('Your username has been changed');
         setInitialUserName(newUserName); // Met à jour le nom d'utilisateur initial avec le nouveau nom d'utilisateur
         toggleEdit();
     };
 
     const handleCancel = () => {
+        setNewUserName(initialUserName); // Réinitialise le nom d'utilisateur à sa valeur initiale
         toggleEdit();
     };
 
     return (
         <main className='main bg-dark'>
 
-            {!editUserName ? (
+            {!updateUsername ? (
                 <section className='header'>
-                    <h2>Welcome back<br />{userProfile.firstName} {userProfile.lastName} !</h2>
+                    <h2>Welcome back<br />{userProfile && userProfile.firstName} {userProfile && userProfile.lastName} !</h2>
+
                     <button onClick={toggleEdit}>Edit Name</button>
                 </section>
 
