@@ -3,7 +3,7 @@ import './profile.css';
 import Account from '../../components/Account/Account';
 import accountData from '../../data/accountData.json';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProfile, editUsername } from '../../redux/actions/auth.actions'; // Mettre à jour l'import de l'action
+import { getProfile, editUsername } from '../../redux/actions/auth.actions';
 
 const Profile = () => {
     const dispatch = useDispatch();
@@ -37,14 +37,14 @@ const Profile = () => {
     };
 
     const handleSave = () => {
-        dispatch(editUsername(newUserName)); // Correction de l'action
+        dispatch(editUsername(newUserName));
         alert('Your username has been changed');
-        setInitialUserName(newUserName); // Met à jour le nom d'utilisateur initial avec le nouveau nom d'utilisateur
+        setInitialUserName(newUserName); 
         toggleEdit();
     };
 
     const handleCancel = () => {
-        setNewUserName(initialUserName); // Réinitialise le nom d'utilisateur à sa valeur initiale
+        setNewUserName(initialUserName);
         toggleEdit();
     };
 

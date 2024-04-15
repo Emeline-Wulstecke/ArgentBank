@@ -3,7 +3,7 @@ import './banner.css';
 
 const Banner = () => {
     return (
-        <figure id="banner">
+        <figure id="banner" loading="lazy">
             <figcaption>
                 <h2 className="sr-only">Promoted Content</h2>
                 <p className="subtitle">No fees.</p>

@@ -131,7 +131,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Transactions
+        - Transactions Module
       summary: Get transaction details
       description: Retrieve details of a transaction
       parameters:
@@ -155,7 +155,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Transactions
+        - Transactions Module
       summary: Update transaction category and note
       description: Update the category and note of a transaction
       parameters:

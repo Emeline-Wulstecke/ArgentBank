@@ -3,7 +3,6 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import authReducer from './reducers/auth.reducer';
 
-// Créer la configuration de persistance
 const persistConfig = {
   key: 'root',
   storage,

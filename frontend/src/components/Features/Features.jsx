@@ -5,7 +5,7 @@ const Features = ({ icon, alt, title, description }) => {
     console.log(icon)
 
     return (
-        <figure id='features'>
+        <figure id='features' loading="lazy">
             <img src={icon} alt={alt} />
             <figcaption>
                 <h3>{title}</h3>

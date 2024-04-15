@@ -5,9 +5,6 @@ export const logIn = createAsyncThunk(
   'auth/logIn',
   async ({ email, password, rememberMe }, { rejectWithValue }) => {
     try {
-      console.log('Email:', email);
-      console.log('Password:', password);
-      console.log('Remember Me:', rememberMe);
 
       const response = await fetch('http://localhost:3001/api/v1/user/login', {
         method: 'POST',
@@ -17,8 +14,6 @@ export const logIn = createAsyncThunk(
         body: JSON.stringify({ email, password }),
       });
 
-      console.log('Response:', response);
-
       if (!response.ok) {
         console.log('Response is not OK:', response);
         throw new Error('Invalid email or password');
@@ -26,9 +21,6 @@ export const logIn = createAsyncThunk(
 
       const data = await response.json();
       const token = data.body.token;
-
-      console.log('Data:', data);
-      console.log('Token:', token);
 
       localStorage.setItem('token', token);
 
@@ -45,13 +37,12 @@ export const logIn = createAsyncThunk(
   }
 );
 
-
 export const logOut = createAsyncThunk(
   'auth/logOut',
   async (_, { rejectWithValue }) => {
     try {
-      localStorage.removeItem('token'); // Supprimez le token du local storage
-      sessionStorage.removeItem('token'); // Supprimez le token de la session
+      localStorage.removeItem('token'); 
+      sessionStorage.removeItem('token');
 
       return null;
     } catch (error) {

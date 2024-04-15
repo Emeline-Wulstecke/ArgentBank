@@ -7,7 +7,7 @@ const Account = ({ type, number, balance, balanceDescription }) => {
     const navigate = useNavigate();
 
     const redirectToErrorPage = () => {
-        navigate('/error'); // Redirection vers la page d'erreur
+        navigate('/error');
     };
 
 

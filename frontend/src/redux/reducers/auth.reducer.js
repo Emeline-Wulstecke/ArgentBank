@@ -4,8 +4,8 @@ import { logIn, logOut, getProfile, editUsername } from '../actions/auth.actions
 const initialState = {
   isAuthenticated: false,
   user: {
-    firstName: "", // Ajoutez la propriété firstName
-    lastName: "", // Ajoutez la propriété lastName
+    firstName: "",
+    lastName: "",
     userName: "",
   },
   token: null,
