@@ -15,7 +15,7 @@ const Account = ({ type, number, balance, balanceDescription }) => {
         <section id="account">
             <header>
                 <h3>{type} - {number}</h3>
-                <p className='amount'>{balance}</p>
+                <b>{balance}</b>
                 <p>{balanceDescription}</p>
             </header>
             <button onClick={redirectToErrorPage}>View transactions</button>

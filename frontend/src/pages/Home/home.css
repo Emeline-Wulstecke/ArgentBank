@@ -1,12 +1,9 @@
-@media (max-width: 920px) {
-  .icon {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 767px) {
- .icon {
+.icon {
+  display: flex;
+  
+  @media (max-width: 920px) {
     flex-direction: column;
   }
 }
+
+

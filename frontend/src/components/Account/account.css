@@ -1,4 +1,4 @@
-#account {
+[id="account"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,51 +11,51 @@
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
-}
-#account label {
-  width: 100%;
-  flex: 1;
-}
-#account h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  font-weight: normal;
-}
 
-#account p {
-  margin: 0;
-}
-
-#account button{
-  display: block;
-  width: 100%;
-  padding: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  border-color: #00bc77;
-  background-color: #00bc77;
-  color: #fff;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-#account button:hover {
-    opacity:0.95;
+  label {
+    width: 100%;
+    flex: 1;
   }
 
-  p.amount {
-    font-size: 2.5rem;
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 1.1rem;
     font-weight: bold;
+    margin-top: 1rem;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: 0.95;
+    }
   }
 
-@media (min-width: 720px) {
-  #account {
-      flex-direction: row;
+  b {
+    font-size: 2.5rem;
   }
 
-  #account button {
+  @media (min-width: 720px) {
+    flex-direction: row;
+
+    button {
       width: 200px;
+    }
   }
 }

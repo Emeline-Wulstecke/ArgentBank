@@ -1,39 +1,39 @@
-#login {
+[id="login"] {
   box-sizing: border-box;
   margin: 0 auto;
   margin-top: 3rem;
   padding: 2rem;
   width: 300px;
   background-color: white;
-}
 
-#login h2 {
-  font-size: 1.5em;
-}
+  h2 {
+    font-size: 1.5em;
+  }
 
-#login fieldset {
-  text-align: left;
-  border: none;
-  padding: 0;
-  padding-bottom: 15px;
-}
+  fieldset {
+    text-align: left;
+    border: none;
+    padding: 0;
+    padding-bottom: 15px;
+  }
 
-#login input {
-  padding: 5px;
-  font-size: 1.3rem;
-}
+  input {
+    padding: 5px;
+    font-size: 1.3rem;
+  }
 
-#login button {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  font-size: 1rem;
-  text-decoration: underline;
-}
+  button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    text-decoration: underline;
+  }
 
-#login p {
-  color: red;
-  font-weight: italic;
+  p {
+    color: red;
+    font-weight: italic;
+  }
 }
 
 .remember label {

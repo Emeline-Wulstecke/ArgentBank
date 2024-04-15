@@ -31,7 +31,6 @@ const Profile = () => {
     const toggleEdit = () => {
         setupdateUsername(!updateUsername);
         if (!updateUsername) {
-            // Mettre à jour newUserName avec la valeur actuelle de userProfile.userName
             setNewUserName(userProfile.userName || '');
         }
     };
