@@ -6,20 +6,35 @@ import Profile from './pages/Profile/Profile';
 import Error from './pages/Error/Error';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
+import ProtectedRoute from './protectedRoute';
 
-function App () {
+function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/login"
+          element={
+            <ProtectedRoute isProtected={false}>
+              <Login />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute isProtected={true}>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
